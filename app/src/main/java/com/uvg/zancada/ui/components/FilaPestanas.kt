@@ -1,6 +1,7 @@
 package com.uvg.zancada.ui.components
 
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,20 +16,22 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun FilaPestanas(
     pestanas: List<String>,
-    indiceActivo: Int,
+    selectedTab: String,
+    onTabSelected: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(20.dp)
     ) {
-        pestanas.forEachIndexed { indice, pestana ->
-            val activa = indice == indiceActivo
+        pestanas.forEach { pestana ->
+            val activa = pestana == selectedTab
             Text(
                 text = pestana,
                 fontSize = 14.sp,
                 fontWeight = if (activa) FontWeight.Bold else FontWeight.Normal,
-                color = if (activa) Color(0xFF242424) else Color(0xFF9A9A9A)
+                color = if (activa) Color(0xFF242424) else Color(0xFF9A9A9A),
+                modifier = Modifier.clickable { onTabSelected(pestana) }
             )
         }
     }

@@ -1,9 +1,11 @@
 package com.uvg.zancada.model
 
-data class Articulo(
-    val autor: String,
-    val titulo: String,
-    val extracto: String,
-    val minutosLectura: Int,
-    val fecha: String
+data class Article(
+    val author: String,
+    val title: String,
+    val excerpt: String,
+    val readingMinutes: Int,
+    val date: String,
+    val isAuthorFollowed: Boolean,
+    val isFeatured: Boolean
 )
