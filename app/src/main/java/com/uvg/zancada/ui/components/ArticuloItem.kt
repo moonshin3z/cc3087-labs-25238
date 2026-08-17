@@ -20,11 +20,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.uvg.zancada.model.Articulo
+import com.uvg.zancada.model.Article
 
 @Composable
 fun ArticuloItem(
-    articulo: Articulo,
+    articulo: Article,
     colorAvatar: Color,
     colorMiniatura: Color,
     modifier: Modifier = Modifier
@@ -46,7 +46,7 @@ fun ArticuloItem(
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(
-                    text = articulo.autor,
+                    text = articulo.author,
                     fontSize = 12.sp,
                     color = Color(0xFF4A4A4A)
                 )
@@ -55,7 +55,7 @@ fun ArticuloItem(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = articulo.titulo,
+                text = articulo.title,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFF242424)
@@ -64,7 +64,7 @@ fun ArticuloItem(
             Spacer(modifier = Modifier.height(4.dp))
 
             Text(
-                text = articulo.extracto,
+                text = articulo.excerpt,
                 fontSize = 14.sp,
                 color = Color(0xFF6B6B6B)
             )
@@ -77,13 +77,13 @@ fun ArticuloItem(
                 horizontalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 Text(
-                    text = "${articulo.minutosLectura} min de lectura",
+                    text = "${articulo.readingMinutes} min de lectura",
                     fontSize = 12.sp,
                     color = Color(0xFF9A9A9A)
                 )
                 Text(text = "·", fontSize = 12.sp, color = Color(0xFF9A9A9A))
                 Text(
-                    text = articulo.fecha,
+                    text = articulo.date,
                     fontSize = 12.sp,
                     color = Color(0xFF9A9A9A)
                 )

@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.uvg.zancada"
-    compileSdk {
-        version = release(37)
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.uvg.zancada"
